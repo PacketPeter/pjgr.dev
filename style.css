@@ -358,20 +358,45 @@ body {
 /* About */
 
 .about-container {
-    height: 70vh;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: /* creates a grid template */
+        "header header"
+        "paragraph paragraph"
+        "img img";
+
+    grid-template-columns: 2fr 0fr; /* creates ratio between columns */
+    grid-template-rows: 50px auto auto; /* creates ratio between rows */
+    grid-column-gap: 1em;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
+    gap: 1em;
+    }
+
+@media screen and (max-width: 730px) {
+    .about-container {
+        grid-template-areas: 
+            "header header"
+            "paragraph paragraph"
+            "img img";
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto auto;
+    }
 }
 
 .about-title {
-    font-family: Gilroy-SemiBold;
-    font-size: 40px;
+    grid-area: header;
+    font-family: Gilroy-SemiBoldItalic;
 }
 
-.construction-text {
-    font-family: Gilroy-Medium;
-    font-size: 18px;
+#paragraph-1{
+    grid-area: paragraph;
 }
+
+.about-img {
+    grid-area: img;
+    width: clamp(15rem, 90vw, 44.5rem); /* creates a min, percent of viewport size, and max width for the image */
+    justify-self: center; /* centers the image in the column */
+    box-shadow: 5px 5px 10px 0px rgba(240, 240, 240,0.5); /* Adds white border shadow */
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(240, 240, 240,0.5);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(240, 240, 240,0.5);
+}
+

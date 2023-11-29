@@ -393,7 +393,7 @@ body {
 
 .about-img {
     grid-area: img;
-    width: clamp(15rem, 90vw, 44.5rem); /* creates a min, percent of viewport size, and max width for the image */
+    width: clamp(15rem, 80vw, 44.5rem); /* creates a min, percent of viewport size, and max width for the image */
     justify-self: center; /* centers the image in the column */ 
     box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5); /* Adds gray/white border shadow */
     -webkit-box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5);

@@ -300,7 +300,12 @@ body {
     display: flex;
     padding-bottom: 0.3rem;
     padding-top: 2rem;
-    margin-bottom: 0rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 44rem;
+    height: 2.5rem;
+    padding-bottom: 1rem;
     -moz-box-orient: horizontal;
     -moz-box-direction: normal;
     flex-direction: row;
@@ -311,6 +316,12 @@ body {
 }
 
 @media screen and (max-width: 430px) {
+    .footer-container {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 810px) {
     .footer-container {
         -moz-box-orient: vertical;
         flex-direction: column;

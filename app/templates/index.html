@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Peter | pjgr.me</title>
+    <title>Home | pjgr.me</title>
     <meta name="description" content="Peter Richards' Website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href={{url_for('static', filename='style.css')}}>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="">
 </head>
@@ -23,14 +23,15 @@
                         <a class="site-title" href="/">Peter Richards</a>
                     </div>
                     <div class="nav-links-container">
-                        <a class="nav-links" href="about.html">About</a>
+                        <a class="nav-links" href="/about">About</a>
+                        <a class="nav-links" href="/contact">Contact</a>
                     </div>
                 </div>
             </div>
         </header>
 
         <section class="about-me-container">
-            <img class="about-me-img" src="assets/img/peter-logo-main-2.png" alt="Peter Image">
+            <img class="about-me-img" src="{{url_for('static', filename='logo.png')}}" alt="Peter Image">
             <span id="about-peter-link"><span class="about-peter-link"><a href="/about">Hi, I'm Peter!</a></span>
                 <span id="about-peter-description">I am a highschool student with a passion for Technology.</span>
 
@@ -51,7 +52,7 @@
         <section class="project">
             <div class="project-link-container">
                 <a class="project-link" href="https://peakpass.pkrm.dev/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/img/peakpass.png" alt="PeakPass">
+                    <img src="{{url_for('static', filename='peakpass-logo.png')}}" alt="PeakPass">
                     PeakPass
                 </a>
             </div>
@@ -69,21 +70,29 @@
             </p>
         </section>
 
+        <section class="project">
+            <div class="project-link-container">
+                <a class="project-link" href="https://peakpass.pkrm.dev/" target="_blank" rel="noopener noreferrer">
+                    <img id="edustore-img" src="{{url_for('static', filename='edustore-logo.png')}}" alt="EduStore Logo">
+                    EduStore
+                </a>
+            </div>
+            <h2 class="project-info">Nov. 1st 2023 ● <a href="https://github.com/PacketParker/edustore" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+            </h2>
+            <p class="project-description">EduStore looks to fill a gap in any School District's extensive inventory system. Currently implemented in Mansfield ISD's Technology Department, our program allows this 54 campus school district to easily manage the massive number of items in inventory and get alerted when essential items become low on count. <p class="project-description">Furthermore, EduStore allows admins to keep track of which users are taking out items and constantly observe the number of all parts currently in inventory. Lastly, we've created functionality for school district's to create administrator accounts to add new items to inventory based on their Purchase Order.</p>
+            <p class="project-description">This is our submission for the
+                <a id="cac-link" href="https://www.congressionalappchallenge.us/" target="_blank"
+                    rel="noopener noreferrer">2023 Congressional App Challenge Competition</a>.
+                It has been open sourced for transparency.
+            </p>
+        </section>
+
         <section>
             <footer>
                 <div class="footer-container">
-                    <div class="footer-left">
+                    <div class="footer-text-container">
                         <p class="footer-text">© 2023 Peter Richards</p>
-                    </div>
-                    <div class="footer-right">
-                        <a class="social-github" href="https://github.com/ptr06" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a class="social-linkedin" href="https://www.linkedin.com/in/peter-richards-webdev"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
                     </div>
                 </div>
         </section>

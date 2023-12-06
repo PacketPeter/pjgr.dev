@@ -27,6 +27,10 @@
     transition: all 0.25s ease-out;
 }
 
+html {
+    height: 100%;
+}
+
 img {
     display: block;
     margin-left: auto;
@@ -46,6 +50,7 @@ a {
 body {
     overflow-x: hidden;
     position: relative;
+    min-height: 100%;
 }
 
 .nav-container {
@@ -262,7 +267,7 @@ body {
     height: 30px;
     color: white;
     position: relative;
-    top: 2px;
+    top: 4px;
 }
 
 .project-info {
@@ -297,15 +302,33 @@ body {
 /* Footer */
 
 .footer-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text-container {
     display: flex;
-    padding-bottom: 0.3rem;
-    padding-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    font-family: Gilroy-Regular;
+    color: rgb(180, 180, 180);
+    margin-bottom: 0px;
+    padding-bottom: 1rem;
+    font-weight: 600;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    max-width: 44rem;
+}
+
+/* .footer-container {
+    display: flex;
+    max-width: 45rem;
+    position: absolute;
+    bottom: 0;
     height: 2.5rem;
-    padding-bottom: 1rem;
     -moz-box-orient: horizontal;
     -moz-box-direction: normal;
     flex-direction: row;
@@ -314,27 +337,25 @@ body {
     -moz-box-align: center;
     align-items: center;
 }
-
+*/
 @media screen and (max-width: 430px) {
-    .footer-container {
-        position: relative;
+    .footer-text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        padding-top: 1rem;
     }
 }
 
-@media screen and (max-width: 810px) {
-    .footer-container {
-        -moz-box-orient: vertical;
-        flex-direction: column;
-        padding-top: 0.5rem;
-    }
-}
-
+/*
 .footer-left {
     display: block;
     font-weight: 700;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1rem;
     letter-spacing: 1.3px;
+    width: clamp(15rem, 80vw, 44.5rem);
 }
 
 .footer-text {
@@ -345,8 +366,7 @@ body {
 
 .footer-right {
     display: flex;
-    max-width: 36rem;
-    font-size: 18px;
+    font-size: 1rem;
     margin-top: 12px;
     -moz-box-orient: horizontal;
     -moz-box-direction: normal;
@@ -364,7 +384,7 @@ body {
 
 .footer-right a i:hover {
     color: white;
-}
+} */
 
 /* About */
 
@@ -411,3 +431,111 @@ body {
     -moz-box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5);
 }
 
+/* Contact */
+
+.contact-container {
+    font-family: Gilroy-Regular;
+}
+
+.contact-text-container {
+    display: grid;
+    grid-template-areas: /* creates a grid template */
+        "title"
+        "text";
+    align-items: center;
+}
+
+.contact-title {
+    grid-area: title;
+    font-family: Gilroy-SemiBoldItalic;
+    width: clamp(15rem, 80vw, 44.5rem);
+    justify-self: center;
+    margin: 0;
+}
+
+.contact-text {
+    grid-area: text; 
+    width: clamp(15rem, 80vw, 44.5rem);
+    justify-self: center;
+}
+
+.contact-form {
+    font-family: Gilroy-Regular;
+    display: grid;
+    grid-template-areas: /* creates a grid template */
+        "name"
+        "email"
+        "message"
+        "send";
+
+    align-items: center;
+    gap: 1.25em;
+    padding-bottom: inherit;
+}
+
+.contact-item {
+    font-family: Gilroy-Regular;
+    font-size: 1rem;
+    padding: .5rem;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    justify-self: center;
+}
+
+input[type="text"] {
+    grid-area: name;
+    width: clamp(15rem, 80vw, 44.5rem);
+    justify-self: center;
+}
+
+input[type="email"] {
+    grid-area: email;
+    width: clamp(15rem, 80vw, 44.5rem);
+    justify-self: center;
+}
+
+textarea[name="message"] {
+    grid-area: message;
+    resize: vertical;
+    width: clamp(15rem, 80vw, 44.5rem);
+    justify-self: center;
+}
+
+input[placeholder] {
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    font-size: 1rem;
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+    /* usual styles */
+    cursor: pointer;
+    padding:10px;
+    margin-bottom: 2rem ;
+    border: 2px solid #eee;
+    color:rgb(212, 212, 212);
+    border-radius:5px;
+    width: clamp(15rem, 80vw, 44.5rem);
+    grid-area: send;
+    justify-self: center;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(50, 60, 68);
+}
+
+.success {
+    color: #73C276;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.error {
+    color: #FA5B5B;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}

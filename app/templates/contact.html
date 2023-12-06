@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact | pjgr.me</title>
+    <meta name="description" content="Peter Richards' Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div style="margin: auto; max-width: 47.5rem; padding: 1.5rem 1.45rem; font-size: 1.1rem; line-height: 34px; letter-spacing: 0.9px; position: relative;
+    min-height: 90vh;">
+        <header>
+            <div class=" nav-container">
+                <div class="nav-flex-container">
+                    <div class="site-title-container">
+                        <a class="site-title" href="/">Peter Richards</a>
+                    </div>
+                    <div class="nav-links-container">
+                        <a class="nav-links" href="/about">About</a>
+                        <a class="nav-links" href="/contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+           <!--Create a section that informs the user what the contact section is to be used for-->
+            <div class="contact-container">
+                <div class="contact-text-container">
+                    <h1 class="contact-title">Get in touch! 📲</h1>
+                    <p class="contact-text">If you would like to get in touch with me, please fill out the form below and I will get back to you as soon as possible.</p>
+                </div>
+            </div>
+        </section>
+        
+        <form actions="/contact" method="POST" class="contact-form" onsubmit="event.preventDefault(); checkForm();">
+            <input type="hidden" name="contact_number">
+            <input class="contact-item" placeholder="Name" type="text" name="user_name">
+            <input class="contact-item" placeholder="Email" type="email" name="user_email">
+            <textarea class="contact-item" placeholder="Your Message" name="message"></textarea>
+            <input class="contact-item" type="submit" value="Send">
+        </form> 
+
+        {% if success %}
+            <p class="success">Thank you for contacting me! I will get back to you as soon as possible.</p>
+        {% endif %}
+        {% if error %}
+            <p class="error">Sorry, there was an error sending your message. Please try again later.</p>
+        {% endif %}
+
+        <section>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-text-container">
+                        <p class="footer-text">© 2023 Peter Richards</p>
+                    </div>
+                </div>
+        </section>
+    </div> 
+</body>
+</html>
+<script>
+    const nameInput = document.querySelector('input[name="user_name"]');
+    const emailInput = document.querySelector('input[name="user_email"]');
+    const messageInput = document.querySelector('textarea[name="message"]');
+
+    window.onload = validateForm();
+
+    function validateForm() {
+        nameInput.addEventListener('input', () => {
+            if (nameInput.value.length > 0) {
+                nameInput.style.border = '2px solid #242424';
+            } else {
+                nameInput.style.border = '2px solid #FA5B5B';
+            }
+        });
+
+        emailInput.addEventListener('input', () => {
+            if (emailInput.value.length > 0) {
+                emailInput.style.border = '2px solid #242424';
+            } else {
+                emailInput.style.border = '2px solid #FA5B5B';
+            }
+        });
+
+        messageInput.addEventListener('input', () => {
+            if (messageInput.value.length > 0) {
+                messageInput.style.border = '2px solid #242424';
+            } else {
+                messageInput.style.border = '2px solid #FA5B5B';
+            }
+        });
+    }
+
+    function checkForm() {
+        // If nothing is empty, submit
+        if (nameInput.value.length > 0 && emailInput.value.length > 0 && messageInput.value.length > 0) {
+            document.getElementsByClassName('contact-form')[0].submit();
+
+        // Otherwise, outline the empty fields in red
+        } else {
+            if (nameInput.value.length == 0) {
+                nameInput.style.border = '2px solid #FA5B5B';
+            }
+
+            if (emailInput.value.length == 0) {
+                emailInput.style.border = '2px solid #FA5B5B';
+            }
+
+            if (messageInput.value.length == 0) {
+                messageInput.style.border = '2px solid #FA5B5B';
+            }
+        }
+    }
+</script>

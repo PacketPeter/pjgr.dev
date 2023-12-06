@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Peter | pjgr.me</title>
+    <title>About Me | pjgr.me</title>
     <meta name="description" content="Peter Richards' Website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="">
 </head>
@@ -22,7 +22,8 @@
                         <a class="site-title" href="/">Peter Richards</a>
                     </div>
                     <div class="nav-links-container">
-                        <a class="nav-links" href="about.html">About</a>
+                        <a class="nav-links" href="/about">About</a>
+                        <a class="nav-links" href="/contact">Contact</a>
                     </div>
                 </div>
             </div>
@@ -33,25 +34,15 @@
             <p class="about-paragraphs">
                 <p id="paragraph-1">Hey, I'm <strong>Peter Richards</strong>! During the day, I'm a Jewelry Repair Consultant at Fast-Fix Jewelry & Watch Repairs, where I bring my passions to the world of jewelry restoration. Beyond the service counter, I find my passion in coding, particularly with <strong>HTML and CSS</strong>. <br> <br> Currently, I've immersed myself in the world of <strong>JavaScript</strong>, eager to expand my coding horizons. Balancing the evolving world of coding with the intricacy of repair consulting is a fulfilling journey that defines my professional versatility and values.</p>
             <div class="about-img">
-                <img src="assets/img/about-img-2.jpg" alt="main photo">
+                <img src="{{url_for('static', filename='about-img.jpg')}}" alt="Photo of me">
             </div>
         </section>
 
         <section>
             <footer>
                 <div class="footer-container">
-                    <div class="footer-left">
+                    <div class="footer-text-container">
                         <p class="footer-text">© 2023 Peter Richards</p>
-                    </div>
-                    <div class="footer-right">
-                        <a class="social-github" href="https://github.com/ptr06" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a class="social-linkedin" href="https://www.linkedin.com/in/peter-richards-webdev"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
                     </div>
                 </div>
         </section>

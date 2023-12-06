@@ -1,0 +1,14 @@
+# Systemd service file, feel free to edit to your needs, this isnt needed though
+
+[Unit]
+Description=Keep PJGR.ME Up and Running
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/parker/services/pjgr
+ExecStart=/usr/bin/bash /home/parker/services/pjgr/pjgr.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

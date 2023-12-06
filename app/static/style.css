@@ -301,19 +301,40 @@ body {
 
 /* Footer */
 
-.footer-container {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-text-container {
+footer {
+    /* Stick to very bottom of the page */
+    position: absolute;
+    bottom: 1rem;
+    max-width: 47.5rem; 
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Gilroy-Regular;
+    color: rgb(180, 180, 180);
 }
 
-.footer-text {
+@media screen and (max-width: 430px) {
+    footer {
+        max-width: 100%;
+    }
+}
+
+
+
+/* .footer-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .footer-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .footer-text {
     font-family: Gilroy-Regular;
     color: rgb(180, 180, 180);
     margin-bottom: 0px;
@@ -321,7 +342,7 @@ body {
     font-weight: 600;
     position: absolute;
     bottom: 0;
-}
+} */
 
 /* .footer-container {
     display: flex;
@@ -338,15 +359,7 @@ body {
     align-items: center;
 }
 */
-@media screen and (max-width: 430px) {
-    .footer-text {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        margin-top: auto;
-        padding-top: 1rem;
-    }
-}
+
 
 /*
 .footer-left {
@@ -513,7 +526,6 @@ input[type="submit"] {
     /* usual styles */
     cursor: pointer;
     padding:10px;
-    margin-bottom: 2rem ;
     border: 2px solid #eee;
     color:rgb(212, 212, 212);
     border-radius:5px;
@@ -530,12 +542,10 @@ input[type="submit"]:hover {
     color: #73C276;
     font-size: 1rem;
     text-align: center;
-    margin-top: 1rem;
 }
 
 .error {
     color: #FA5B5B;
     font-size: 1rem;
     text-align: center;
-    margin-top: 1rem;
 }

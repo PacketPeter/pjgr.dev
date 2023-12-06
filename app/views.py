@@ -38,6 +38,3 @@ def contact():
             return flask.render_template("contact.html", success=True)
         except:
             return flask.render_template("contact.html", error=True)
-        
-if __name__ == "__main__":
-    app.run(debug=True)

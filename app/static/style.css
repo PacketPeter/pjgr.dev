@@ -157,6 +157,10 @@ footer {
         width: 100%;
         padding: 0;
     }
+
+    br {
+        display: none;
+    }
 }
 
 /* About Me */
@@ -328,10 +332,8 @@ footer {
     margin: 0 0 20px;
 }
 
-@media screen and (max-width: 770px) {
-    .project-description:last-child {
-        margin-bottom: 5rem;
-    }
+.project-description:last-child {
+    margin-bottom: 5rem;
 }
 
 #cac-link {

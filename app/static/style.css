@@ -27,6 +27,22 @@
     transition: all 0.25s ease-out;
 }
 
+.main {
+    margin: auto;
+    max-width: 47.5rem;
+    font-size: 1.1rem;
+    line-height: 34px;
+    letter-spacing: 0.9px;
+    position: relative;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 430px) {
+    .main {
+        padding: 1.5rem 1.45rem;
+    }
+}
+
 html {
     height: 100%;
 }
@@ -51,6 +67,8 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .nav-container {
@@ -120,6 +138,25 @@ body {
 
 .nav-links:hover {
     color: white;
+}
+
+/* Footer */
+
+footer {
+    position: absolute;
+    bottom: 2rem;
+    font-family: Gilroy-Regular;
+    color: rgb(180, 180, 180);
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 430px) {
+    footer {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 /* About Me */
@@ -298,106 +335,6 @@ body {
 #cac-link:hover {
     color: rgb(180, 180, 180);
 }
-
-/* Footer */
-
-footer {
-    /* Stick to very bottom of the page */
-    position: absolute;
-    bottom: 1rem;
-    max-width: 47.5rem; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Gilroy-Regular;
-    color: rgb(180, 180, 180);
-}
-
-@media screen and (max-width: 430px) {
-    footer {
-        max-width: 100%;
-    }
-}
-
-
-
-/* .footer-container {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .footer-text-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .footer-text {
-    font-family: Gilroy-Regular;
-    color: rgb(180, 180, 180);
-    margin-bottom: 0px;
-    padding-bottom: 1rem;
-    font-weight: 600;
-    position: absolute;
-    bottom: 0;
-} */
-
-/* .footer-container {
-    display: flex;
-    max-width: 45rem;
-    position: absolute;
-    bottom: 0;
-    height: 2.5rem;
-    -moz-box-orient: horizontal;
-    -moz-box-direction: normal;
-    flex-direction: row;
-    -moz-box-pack: center;
-    justify-content: center;
-    -moz-box-align: center;
-    align-items: center;
-}
-*/
-
-
-/*
-.footer-left {
-    display: block;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1rem;
-    letter-spacing: 1.3px;
-    width: clamp(15rem, 80vw, 44.5rem);
-}
-
-.footer-text {
-    font-family: Gilroy-Regular;
-    color: rgb(180, 180, 180);
-    margin-bottom: 0px;
-}
-
-.footer-right {
-    display: flex;
-    font-size: 1rem;
-    margin-top: 12px;
-    -moz-box-orient: horizontal;
-    -moz-box-direction: normal;
-    flex-direction: row;
-    flex: 1 1 0%;
-    -moz-box-align: center;
-    align-items: center;
-    -moz-box-pack: end;
-    justify-content: flex-end;
-}
-
-.footer-right a i {
-    color: rgb(180, 180, 180);
-}
-
-.footer-right a i:hover {
-    color: white;
-} */
 
 /* About */
 

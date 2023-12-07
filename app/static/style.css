@@ -489,12 +489,6 @@ input[type="submit"]:hover {
     background-color: rgb(50, 60, 68);
 }
 
-@media screen and (max-width: 430px) {
-    input[type="submit"] {
-        margin-bottom: 4rem;
-    }
-}
-
 .success {
     color: #73C276;
     font-size: 1rem;

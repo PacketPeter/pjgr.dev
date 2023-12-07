@@ -328,6 +328,12 @@ footer {
     margin: 0 0 20px;
 }
 
+@media screen and (max-width: 770px) {
+    .project-description:last-child {
+        margin-bottom: 5rem;
+    }
+}
+
 #cac-link {
     text-decoration: underline;
 }
@@ -379,6 +385,12 @@ footer {
     box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5); /* Adds gray/white border shadow */
     -webkit-box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5);
     -moz-box-shadow: 5px 5px 10px 0px rgba(174,180,194, 0.5);
+}
+
+@media screen and (max-width: 730px) {
+    .about-img {
+        margin-bottom: 2.5rem;
+    }
 }
 
 /* Contact */
@@ -473,6 +485,12 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: rgb(50, 60, 68);
+}
+
+@media screen and (max-width: 430px) {
+    input[type="submit"] {
+        margin-bottom: 4rem;
+    }
 }
 
 .success {
